@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>יצירת קשר | רפאל עיצוב שיער</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/components.css">
+    <style>
+        body {
+            background-color: var(--color-primary-light);
+        }
+
+        .contact-hero {
+            position: relative;
+            background: #141311;
+            padding: 12rem 0 8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .contact-hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('assets/glamour_hair_2.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            filter: grayscale(30%);
+            z-index: 1;
+        }
+
+        .contact-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #FDFDFB;
+        }
+
+        .contact-hero-content h1 {
+            font-size: clamp(3.5rem, 6vw, 5.5rem);
+            color: #FDFDFB;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .contact-hero-content p {
+            font-size: 1.4rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+            color: rgba(253, 253, 251, 0.8);
+            line-height: 1.6;
+        }
+
+        .contact-main {
+            position: relative;
+            margin-top: -4rem;
+            z-index: 10;
+            padding-bottom: 6rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 0;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.15);
+            background: #fff;
+        }
+
+        .contact-info-panel {
+            background: var(--color-primary-dark);
+            color: #fff;
+            padding: 5rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-info-title {
+            color: var(--color-accent-gold);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-block {
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .info-icon {
+            font-size: 1.8rem;
+            color: var(--color-accent-gold);
+            line-height: 1;
+            margin-top: 5px;
+        }
+
+        .info-content h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .info-content p,
+        .info-content a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+            font-family: var(--font-body);
+            line-height: 1.6;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .info-content a:hover {
+            color: var(--color-accent-gold);
+        }
+
+        .contact-form-panel {
+            padding: 5rem 6rem;
+            background: #fff;
+            position: relative;
+        }
+
+        .contact-form-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #C0A071, #E6DFD3);
+        }
+
+        .form-heading {
+            font-size: 2.5rem;
+            color: var(--color-primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .form-subheading {
+            color: var(--color-text-muted);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .lux-input-group {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .lux-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            padding: 1rem 0;
+            font-size: 1.2rem;
+            font-family: var(--font-body);
+            color: var(--color-primary-dark);
+            transition: border-color 0.3s;
+        }
+
+        .lux-input:focus {
+            outline: none;
+            border-bottom-color: var(--color-accent-gold);
+        }
+
+        .lux-input::placeholder {
+            color: transparent;
+        }
+
+        .lux-label {
+            position: absolute;
+            top: 1rem;
+            right: 0;
+            font-size: 1.2rem;
+            color: var(--color-text-muted);
+            pointer-events: none;
+            transition: 0.3s ease all;
+            font-family: var(--font-body);
+        }
+
+        .lux-input:focus~.lux-label,
+        .lux-input:not(:placeholder-shown)~.lux-label {
+            top: -10px;
+            font-size: 0.85rem;
+            color: var(--color-accent-gold);
+            font-weight: 600;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--color-primary-dark);
+            color: var(--color-accent-gold);
+            border: none;
+            padding: 1.2rem;
+            font-size: 1.2rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            cursor: pointer;
+            border-radius: var(--border-radius-sm);
+            transition: all 0.4s ease;
+            margin-top: 1rem;
+        }
+
+        .btn-submit:hover {
+            background: var(--color-accent-gold);
+            color: var(--color-white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(192, 160, 113, 0.3);
+        }
+
+        @media (max-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info-panel,
+            .contact-form-panel {
+                padding: 4rem 2rem;
+            }
+
+            .contact-main {
+                margin-top: 0;
+                padding-bottom: 3rem;
+            }
+
+            .contact-hero {
+                padding: 10rem 0 6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">דלג לתוכן המרכזי</a>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo" style="color:var(--color-primary-dark);">רפאל עיצוב שיער</a>
+            <nav aria-label="ניווט ראשי">
+                <button class="mobile-menu-toggle" aria-expanded="false" aria-label="תפריט ניווט">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">דף הבית</a></li>
+                    <li><a href="services.html">שירותים</a></li>
+                    <li><a href="gallery.html">גלריה</a></li>
+                    <li><a href="testimonials.html">המלצות</a></li>
+                    <li><a href="about.html">אודות</a></li>
+                    <li><a href="pricing.html">מחירון</a></li>
+                    <li><a href="contact.html" class="active">צור קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <section class="contact-hero">
+            <div class="contact-hero-bg"></div>
+            <div class="container contact-hero-content fade-up">
+                <h1>נשמח לפגוש אותך</h1>
+                <p>המרחב שלנו נוצר עבורך. צרי קשר לייעוץ אישי, התאמת סגנון וריענון המראה שלך במספרת הפרימיום שלנו.</p>
+            </div>
+        </section>
+
+        <section class="contact-main">
+            <div class="container">
+                <div class="contact-grid fade-up">
+
+                    <div class="contact-info-panel">
+                        <h2 class="contact-info-title">הפרטים שלנו</h2>
+
+                        <div class="info-block">
+                            <span class="info-icon">✦</span>
+                            <div class="info-content">
+                                <h3>כתובת</h3>
+                                <p>קריית מוצקין, רחוב הקיבוצים 9</p>
+                            </div>
+                        </div>
+
+                        <div class="info-block">
+                            <span class="info-icon">✦</span>
+                            <div class="info-content">
+                                <h3>שעות פעילות</h3>
+                                <p>ימים א'-ה': 09:00 - 19:00<br>יום ו': 09:00 - 14:00<br>שבת: סגור</p>
+                            </div>
+                        </div>
+
+                        <div class="info-block">
+                            <span class="info-icon">✦</span>
+                            <div class="info-content">
+                                <h3>טלפון / וואטסאפ</h3>
+                                <p><a href="tel:0501234567" style="font-weight:700;">050-1234567</a></p>
+                                <p><a href="https://wa.me/972501234567" target="_blank" rel="noopener"
+                                        style="text-decoration:underline;">שלחי הודעה בוואטסאפ</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-panel">
+                        <h2 class="form-heading">קביעת תור מהירה</h2>
+                        <p class="form-subheading">השאירי את פרטייך ונחזור אלייך בהקדם לתיאום פגישה אישית.</p>
+
+                        <form onsubmit="event.preventDefault(); alert('בקשתך התקבלה, ניצור קשר בהקדם לתיאום סופי!');">
+                            <div style="display:flex; gap:2rem; flex-wrap:wrap;">
+                                <div class="lux-input-group" style="flex:1; min-width:200px;">
+                                    <input type="text" id="name" name="name" class="lux-input" placeholder="שם מלא"
+                                        required>
+                                    <label for="name" class="lux-label">שם מלא *</label>
+                                </div>
+                                <div class="lux-input-group" style="flex:1; min-width:200px;">
+                                    <input type="tel" id="phone" name="phone" class="lux-input" placeholder="טלפון נייד"
+                                        required>
+                                    <label for="phone" class="lux-label">מספר נייד *</label>
+                                </div>
+                            </div>
+
+                            <div class="lux-input-group" style="margin-top:1rem;">
+                                <select id="service" name="service" class="lux-input" required
+                                    style="color:var(--color-primary-dark);">
+                                    <option value="" disabled selected hidden>סוג הטיפול</option>
+                                    <option value="haircut">תספורת / עיצוב שיער / פן</option>
+                                    <option value="color">צבע שורש / צבע מלא / גוונים</option>
+                                    <option value="treatment">החלקה / שיקום עמוק</option>
+                                    <option value="bridal">תסרוקת ערב / חבילת כלה</option>
+                                    <option value="consultation">פגישת ייעוץ</option>
+                                </select>
+                                <label for="service" class="lux-label"
+                                    style="top:-10px; font-size:0.85rem; color:var(--color-accent-gold); font-weight:600;">שירות
+                                    מבוקש *</label>
+                            </div>
+
+                            <div class="lux-input-group" style="margin-top:1rem;">
+                                <textarea id="notes" name="notes" class="lux-input" rows="2"
+                                    placeholder="בקשות נופסות"></textarea>
+                                <label for="notes" class="lux-label">הערות / בקשות מיוחדות</label>
+                            </div>
+
+                            <button type="submit" class="btn-submit">שלחי בקשה לתיאום</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section style="margin-bottom: -5px;">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1674!2d35.074!3d32.836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151dba6b17dd4613%3A0xc00f576eabbfc4d0!2z16jXl9eV15Eg15TXp9eZ15HXmdei15XXnSA5LCDep9eS15nXmdeqINee15XXpdeo15nXnQ!5e0!3m2!1siw!2sil!4v1700000000000!5m2!1siw!2sil"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="מפת הגעה למספרה ברחוב הקיבוצים 9 בקריית מוצקין"></iframe>
+        </section>
+
+    </main>
+
+    <footer class="bg-dark section-padding" style="padding-bottom: 2rem;">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
+                <div style="flex: 1; min-width: 250px;">
+                    <h3 style="margin-bottom: 1rem; color: var(--color-accent-gold);">רפאל עיצוב שיער</h3>
+                    <p>מספרת בוטיק פרימיום, מתמחה בצבע, כימיה והתאמה אישית של תספורות באווירה יוקרתית.</p>
+                </div>
+                <div style="flex: 1; min-width: 200px;">
+                    <h4 style="margin-bottom: 1rem; color: var(--color-white);">ניווט מהיר</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="index.html">דף הבית</a></li>
+                        <li><a href="services.html">שירותים</a></li>
+                        <li><a href="pricing.html">מחירון</a></li>
+                        <li><a href="accessibility.html">הצהרת נגישות</a></li>
+                    </ul>
+                </div>
+                <div style="flex: 1; min-width: 200px;">
+                    <h4 style="margin-bottom: 1rem; color: var(--color-white);">יצירת קשר</h4>
+                    <p>טלפון: 050-1234567<br>וואטסאפ: <a href="https://wa.me/972501234567" target="_blank"
+                            rel="noopener">לחץ כאן</a><br>קריית מוצקין, רחוב הקיבוצים 9</p>
+                </div>
+            </div>
+            <div
+                style="text-align: center; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); color: var(--color-text-muted);">
+                &copy; 2026 רפאל עיצוב שיער. כל הזכויות שמורות.
+            </div>
+        </div>
+    </footer>
+
+    <div class="mobile-sticky-cta">
+        <a href="contact.html" class="btn">קבע/י תור עכשיו</a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+
+</html>

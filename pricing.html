@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מחירון טיפולים | רפאל עיצוב שיער</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Frank+Ruhl+Libre:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/components.css">
+    <style>
+        body {
+            background-color: var(--color-bg-light);
+        }
+
+        .page-header {
+            background: linear-gradient(rgba(20, 19, 17, 0.8), rgba(20, 19, 17, 0.9)), url('assets/real_rafael_bridal.png') center/cover fixed;
+            padding: 12rem 0 6rem;
+            text-align: center;
+            color: white;
+        }
+
+        .pricing-board {
+            max-width: 1000px;
+            margin: -4rem auto 5rem;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 5rem 4rem;
+            border-radius: 0;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(192, 160, 113, 0.3);
+            border-top: 5px solid var(--color-accent-gold);
+            position: relative;
+            z-index: 10;
+        }
+
+        .pricing-board-title {
+            text-align: center;
+            color: var(--color-primary-dark);
+            font-size: 2.8rem;
+            margin-bottom: 4rem;
+            font-family: var(--font-heading);
+            letter-spacing: -0.5px;
+        }
+
+        .pricing-board-title span {
+            display: block;
+            font-size: 1rem;
+            color: var(--color-accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-body);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem 6rem;
+        }
+
+        .pricing-category-title {
+            font-size: 1.5rem;
+            font-family: var(--font-heading);
+            color: var(--color-primary-dark);
+            border-bottom: 1px solid rgba(192, 160, 113, 0.3);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .pricing-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            position: relative;
+        }
+
+        .pricing-item::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 6px;
+            border-bottom: 1px dotted rgba(20, 19, 17, 0.15);
+            z-index: 1;
+        }
+
+        .pricing-name {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #444;
+            background: inherit;
+            padding-left: 10px;
+            z-index: 2;
+        }
+
+        .pricing-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-accent-gold);
+            background: inherit;
+            padding-right: 10px;
+            z-index: 2;
+            font-family: 'Assistant', sans-serif;
+        }
+
+        @media (max-width: 900px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pricing-board {
+                padding: 3rem 1.5rem;
+                margin: -3rem 1rem 3rem;
+            }
+
+            .pricing-board-title {
+                font-size: 2.2rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .pricing-name,
+            .pricing-price {
+                font-size: 1.05rem;
+            }
+
+            .page-header {
+                padding: 10rem 0 5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">דלג לתוכן המרכזי</a>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">רפאל עיצוב שיער</a>
+            <nav aria-label="ניווט ראשי">
+                <button class="mobile-menu-toggle" aria-expanded="false" aria-label="תפריט ניווט">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">דף הבית</a></li>
+                    <li><a href="services.html">שירותים</a></li>
+                    <li><a href="gallery.html">גלריה</a></li>
+                    <li><a href="testimonials.html">המלצות</a></li>
+                    <li><a href="about.html">אודות</a></li>
+                    <li><a href="pricing.html" class="active">מחירון</a></li>
+                    <li><a href="contact.html">צור קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="page-header fade-up">
+            <div class="container">
+                <h1>מחירון טיפולים</h1>
+                <p style="font-size:1.2rem; color:var(--color-text-muted);">שקיפות מלאה לחוויית פרימיום</p>
+            </div>
+        </div>
+
+        <section class="bg-beige fade-up">
+            <div class="container">
+                <div class="pricing-board">
+                    <h2 class="pricing-board-title">
+                        <span>שירותי סלון</span>
+                        רפאל עיצוב שיער
+                    </h2>
+
+                    <div class="pricing-grid">
+
+                        <!-- Column 1: Haircuts & Color -->
+                        <div>
+                            <h3 class="pricing-category-title">תספורות ועיצוב</h3>
+                            <div class="pricing-list">
+                                <div class="pricing-item">
+                                    <span class="pricing-name">תספורת גבר</span>
+                                    <span class="pricing-price">60 ₪</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="pricing-name">פן</span>
+                                    <span class="pricing-price">50-100 ₪</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="pricing-name">תספורת + פן</span>
+                                    <span class="pricing-price">150-180 ₪</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="pricing-name">תספורת ללא פן</span>
+                                    <span class="pricing-price">140 ₪</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="pricing-name">תספורת ילדה + פן</span>
+                                    <span class="pricing-price">100 ₪</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="pricing-name">עיצוב גבות</span>
+                                    <span class="pricing-price">40 ₪</span>
+                                </div>
+                                <div class="pricing-item" style="margin-top:2rem;">
+                                    <span class="pricing-name"
+                                        style="font-weight:700; color:var(--color-primary-dark);">חבילות ערב וכלה</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="pricing-name">תסרוקת ערב</span>
+                                    <span class="pricing-price">450-600 ₪</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="pricing-name">תסרוקת כלה</span>
+                                    <span class="pricing-price">1200-1500 ₪</span>
+                                </div>
+                            </div>
+
+                            <h3 class="pricing-category-title" style="margin-top: 3rem;">צבע וכימיה בסיסית</h3>
+                            <div class="pricing-list">
+                                <div class="pricing-item">
+                                    <span class="pricing-name">צבע שורש ללא פן</span>
+                                    <span class="pricing-price">140 ₪</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="pricing-name">צבע שורש + פן</span>
+                                    <span class="pricing-price">150-180 ₪</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="pricing-name">צבע כל הראש</span>
+                                    <span class="pricing-price">150-180 ₪</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="pricing-name">צבע שורש + תספורת + פן</span>
+                                    <span class="pricing-price">250-280 ₪</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="pricing-name">תוספת שמן אולפלקס לצבע</span>
+                                    <span class="pricing-price">30-50 ₪</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Column 2: Highlights, Balayage, Treatment -->
+                        <div>
+                            <h3 class="pricing-category-title">גוונים, החלקות ושיקום</h3>
+                            <div class="pricing-list">
+                                <div class="pricing-item">
+                                    <span class="pricing-name">פסים שיער קצר</span>
+                                    <span class="pricing-price">350 ₪</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="pricing-name">פסים שיער קצר + תספורת</span>
+                                    <span class="pricing-price">350 ₪</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="pricing-name">פסים שיער קצר + תספורת + צבע</span>
+                                    <span class="pricing-price">370-400 ₪</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="pricing-name">פסים שיער ארוך</span>
+                                    <span class="pricing-price">400-600 ₪</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="pricing-name">פסים שיער ארוך + תספורת</span>
+                                    <span class="pricing-price">450-500 ₪</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="pricing-name">פסים שיער ארוך + תספורת + צבע</span>
+                                    <span class="pricing-price">500-600 ₪</span>
+                                </div>
+                                <div class="pricing-item" style="margin-top:2rem;">
+                                    <span class="pricing-name"
+                                        style="font-weight:700; color:var(--color-primary-dark);">בלאיאג'</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="pricing-name">אומברה / בלאיאג'</span>
+                                    <span class="pricing-price">800-1200 ₪</span>
+                                </div>
+                                <div class="pricing-item" style="margin-top:2rem;">
+                                    <span class="pricing-name"
+                                        style="font-weight:700; color:var(--color-primary-dark);">החלקות ושיקום</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="pricing-name">החלקה</span>
+                                    <span class="pricing-price">1200-2500 ₪</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="pricing-name">חידוש החלקה + צבע</span>
+                                    <span class="pricing-price">850 ₪</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="pricing-name">חידוש החלקה ללא צבע</span>
+                                    <span class="pricing-price">800 ₪</span>
+                                </div>
+                                <div class="pricing-item">
+                                    <span class="pricing-name">טיפול אמפולה משקם</span>
+                                    <span class="pricing-price">30 ₪</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="text-center mt-4 fade-up" style="padding-bottom: 5rem;">
+                    <p style="font-size: 1.1rem; color: var(--color-text-muted); margin-bottom: 2rem;">* לעיתים תהיה
+                        סטייה קטנה מהמחירון לפי אורך / כמות / מצב השיער</p>
+                    <a href="contact.html" class="btn btn-primary">לקביעת תור וייעוץ</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark section-padding" style="padding-bottom: 2rem;">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
+                <div style="flex: 1; min-width: 250px;">
+                    <h3 style="margin-bottom: 1rem; color: var(--color-accent-gold);">רפאל עיצוב שיער</h3>
+                    <p>מספרת בוטיק פרימיום, מתמחה בצבע, כימיה והתאמה אישית של תספורות באווירה יוקרתית.</p>
+                </div>
+                <div style="flex: 1; min-width: 200px;">
+                    <h4 style="margin-bottom: 1rem; color: var(--color-white);">ניווט מהיר</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="index.html">דף הבית</a></li>
+                        <li><a href="services.html">שירותים</a></li>
+                        <li><a href="pricing.html">מחירון</a></li>
+                        <li><a href="accessibility.html">הצהרת נגישות</a></li>
+                    </ul>
+                </div>
+                <div style="flex: 1; min-width: 200px;">
+                    <h4 style="margin-bottom: 1rem; color: var(--color-white);">יצירת קשר</h4>
+                    <p>טלפון: 050-1234567<br>וואטסאפ: <a href="https://wa.me/972501234567" target="_blank"
+                            rel="noopener">לחץ כאן</a><br>קריית מוצקין, רחוב הקיבוצים 9</p>
+                </div>
+            </div>
+            <div
+                style="text-align: center; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); color: var(--color-text-muted);">
+                &copy; 2026 רפאל עיצוב שיער. כל הזכויות שמורות.
+            </div>
+        </div>
+    </footer>
+
+    <div class="mobile-sticky-cta">
+        <a href="contact.html" class="btn">קבע/י תור עכשיו</a>
+    </div>
+
+    <!-- Accessibility Widget handled in main.js/chatbot.js space, adding button manually if needed -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+
+</html>

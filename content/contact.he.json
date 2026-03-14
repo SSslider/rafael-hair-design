@@ -1,0 +1,16 @@
+{
+    "phone": "050-1234567",
+    "whatsapp": "https://wa.me/972501234567",
+    "email": "contact@rafael-hair.co.il",
+    "address": "קריית מוצקין, רחוב הקיבוצים 9",
+    "routingLink": "https://waze.com/ul?q=רחוב+הקיבוצים+9+קריית+מוצקין",
+    "openingHours": {
+        "sunday_thursday": "09:00 - 19:00",
+        "friday": "09:00 - 14:00",
+        "saturday": "סגור"
+    },
+    "socialMedia": {
+        "instagram": "https://instagram.com/rafael_hair",
+        "facebook": "https://facebook.com/rafael.hair.design"
+    }
+}

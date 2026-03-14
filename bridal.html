@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>כלות ואירועים | רפאל עיצוב שיער</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Frank+Ruhl+Libre:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/components.css">
+    <style>
+        .page-header {
+            background: var(--color-primary-light);
+            padding: 8rem 0 3rem;
+            text-align: center;
+        }
+
+        .bridal-content {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .bridal-content {
+                flex-direction: column;
+            }
+        }
+
+        .bridal-image {
+            flex: 1;
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+        }
+
+        .bridal-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 2px solid var(--color-accent-gold);
+            border-radius: var(--border-radius-md);
+        }
+
+        .bridal-text {
+            flex: 1.2;
+        }
+
+        .bridal-text h2 {
+            font-size: 2.5rem;
+            color: var(--color-primary-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .bridal-text p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">רפאל עיצוב שיער</a>
+            <nav>
+                <button class="mobile-menu-toggle"><span></span><span></span><span></span></button>
+                <ul class="nav-links">
+                    <li><a href="index.html">דף הבית</a></li>
+                    <li><a href="services.html">שירותים</a></li>
+                    <li><a href="pricing.html">מחירון</a></li>
+                    <li><a href="contact.html">צור קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <h1>כלות ואירועים</h1>
+                <p>היום המיוחד שלך מתחיל כאן</p>
+            </div>
+        </div>
+        <section class="section-padding bg-beige">
+            <div class="container">
+                <div class="bridal-content">
+                    <div class="bridal-image"><img src="assets/gallery-bridal.png" alt="תסרוקת כלה"></div>
+                    <div class="bridal-text">
+                        <h2>מראה עוצר נשימה ליום בלתי נשכח</h2>
+                        <p>ביום חתונתך, כל פרט חייב להיות מושלם. רפאל מתמחה ביצירת תסרוקות כלה וערב המשלבות אלגנטיות
+                            קלאסית עם נגיעות טרנדיות. אנו מציעים פגישת ייעוץ מוקדמת להתאמת הלוק המושלם למבנה פנייך
+                            ולסגנון השמלה.</p>
+                        <ul style="list-style:none; padding:0; font-size:1.1rem; line-height:1.8; margin-bottom:2rem;">
+                            <li>✓ ליווי אישי משלב הייעוץ ועד האירוע</li>
+                            <li>✓ שילוב תוספות שיער לפי הצורך</li>
+                            <li>✓ חומרים איכותיים המבטיחים עמידות לאורך כל הערב</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">לתיאום פגישת ייעוץ אישית</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

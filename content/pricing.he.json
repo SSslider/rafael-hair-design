@@ -1,0 +1,37 @@
+{
+    "notice": "המחירים הם הערכה בלבד ועשויים להשתנות בהתאם לאורך סוג השיער ומורכבות העבודה. מומלץ ליצור קשר לקבלת הצעת מחיר מדויקת.",
+    "items": [
+        {
+            "service": "תספורת נשים",
+            "estimatedPrice": "החל מ-250 ₪"
+        },
+        {
+            "service": "תספורת גברים",
+            "estimatedPrice": "החל מ-100 ₪"
+        },
+        {
+            "service": "צבע שורש",
+            "estimatedPrice": "החל מ-200 ₪"
+        },
+        {
+            "service": "גוונים / Balayage",
+            "estimatedPrice": "החל מ-600 ₪"
+        },
+        {
+            "service": "החלקה",
+            "estimatedPrice": "החל מ-1,200 ₪ (בהתאם לאורך השיער)"
+        },
+        {
+            "service": "פן",
+            "estimatedPrice": "החל מ-100 ₪"
+        },
+        {
+            "service": "תסרוקת ערב",
+            "estimatedPrice": "החל מ-450 ₪"
+        },
+        {
+            "service": "חבילת כלה",
+            "estimatedPrice": "בתיאום אישי - אנא צרו קשר"
+        }
+    ]
+}
