@@ -85,22 +85,81 @@ document.addEventListener('DOMContentLoaded', () => {
           start: 'top 80%',
           toggleActions: 'play none none reverse'
         },
-        y: 40,
+        y: 60,
         opacity: 0,
-        duration: 1,
-        stagger: 0.15,
-        ease: 'power3.out'
+        duration: 1.2,
+        stagger: 0.2,
+        ease: 'power4.out'
       });
     });
+
+    // Special Wow effect for specific sections
+    const aboutImg = document.querySelector('.about-image img');
+    if (aboutImg) {
+      gsap.fromTo(aboutImg,
+        { scale: 1.2 },
+        {
+          scale: 1,
+          scrollTrigger: {
+            trigger: '.about-image-wrapper',
+            start: 'top 80%',
+            end: 'bottom top',
+            scrub: 1
+          }
+        }
+      );
+    }
   }
 
-  // Set active link based on current path
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    if (link.getAttribute('href') === currentPath) {
-      link.classList.add('active');
-    }
+  // Smooth Scrolling for Nav Links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      const targetSection = document.querySelector(targetId);
+      if (targetSection) {
+        // Close mobile menu if open
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+
+        const headerOffset = 100;
+        const elementPosition = targetSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
   });
+
+  // Dynamic Active Nav State via Intersection Observer
+  const sections = document.querySelectorAll('section[id]');
+  const navItems = document.querySelectorAll('.nav-links a');
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '-20% 0px -60% 0px',
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navItems.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${entry.target.id}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => observer.observe(section));
 
   // Comprehensive Accessibility Widget (Compliant with Israeli Law)
   const a11yBtn = document.getElementById('a11y-widget-btn');
